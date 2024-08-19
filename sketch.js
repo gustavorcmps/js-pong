@@ -23,21 +23,8 @@ y_racketCPU = 150;
 myscore = 0;
 oponentscore = 0;
 
-//Sons do jogo
-let raquetada;
-let ponto;
-let trilha;
-
-function preload() {
-  trilha = loadSound("trilha.mp3");
-  ponto = loadSound("ponto.mp3");
-  raquetada = loadSound("raquetada.mp3");
-}
-
 function setup() {
   createCanvas(600, 400);
-  trilha.loop();
-}
 
 function draw() {
   background(155, 188, 15);
@@ -79,7 +66,6 @@ function collisions() {
     y_ball < y_racketP1 + altura
   ) {
     speedX *= -1;
-    raquetada.play();
   }
 
   //Colisão com raquete da CPU
@@ -89,7 +75,6 @@ function collisions() {
     y_ball < y_racketCPU + altura
   ) {
     speedX *= -1;
-    raquetada.play();
   }
 }
 
@@ -129,10 +114,8 @@ function scoreboard() {
 function scoreapoint() {
   if (x_ball > 587) {
     myscore += 1;
-    ponto.play();
   }
   if (x_ball < 13) {
     oponentscore += 1;
-    ponto.play();
   }
 }
