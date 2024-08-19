@@ -25,6 +25,7 @@ oponentscore = 0;
 
 function setup() {
   createCanvas(600, 400);
+}
 
 function draw() {
   background(155, 188, 15);
@@ -118,4 +119,4 @@ function scoreapoint() {
   if (x_ball < 13) {
     oponentscore += 1;
   }
-}
+ }
